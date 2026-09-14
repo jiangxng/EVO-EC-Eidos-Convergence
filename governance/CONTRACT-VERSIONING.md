@@ -1,4 +1,4 @@
-# Cross-Repository Contract Versioning Policy v0.1
+# Cross-Repository Contract Versioning Policy v0.2
 
 Status: Proposed for Architecture Convergence v0.2.1
 
@@ -6,13 +6,24 @@ Status: Proposed for Architecture Convergence v0.2.1
 
 1. A published contract version is immutable.
 2. Contract evolution is independent from product release versions.
-3. Additive compatible changes increment the contract patch/minor version according to the contract family's declared policy.
-4. Breaking semantic/schema changes require a new incompatible contract version.
-5. No contract may silently change while retaining the same version identifier.
-6. Providers and consumers must declare supported versions/capabilities.
-7. Unknown/incompatible versions fail closed unless an explicit compatibility adapter is certified.
-8. Historical replay/interpretation must pin the applicable contract/definition version where semantics depend on it.
-9. Deprecation requires replacement guidance, migration window, tests and rollback/compatibility policy.
+3. No contract may silently change while retaining the same version identifier.
+4. Providers and consumers must declare supported versions/capabilities.
+5. Unknown/incompatible versions fail closed unless an explicit compatibility adapter is certified.
+6. Historical replay/interpretation pins the applicable contract/definition version where semantics depend on it.
+7. Deprecation requires replacement guidance, migration window, tests and rollback/compatibility policy.
+8. Handoffs are informational reconciliation state and never override an accepted ADR or published contract.
+
+## Compatibility Is Multi-Dimensional
+
+Every change is classified independently as:
+
+- `schema_compatibility`
+- `semantic_compatibility`
+- `behavior_compatibility`
+
+A syntactically additive schema change may still be semantically or behaviorally breaking. For example, adding a new enum value can break an exhaustive consumer even if the producer's schema evolution is additive.
+
+Breaking schema, semantic or behavioral changes require a new incompatible contract version or an explicit certified compatibility adapter.
 
 ## Required Change Metadata
 
@@ -20,7 +31,9 @@ Every cross-repository contract change records:
 
 - contract family and owner
 - old/new version
-- additive vs breaking classification
+- schema compatibility
+- semantic compatibility
+- behavior compatibility
 - producer impact
 - consumer impact
 - security/authorization impact
@@ -33,4 +46,4 @@ Every cross-repository contract change records:
 
 ## Certification
 
-A version combination is `CERTIFIED` only after required contract/integration tests and reference E2E tests pass. Otherwise it is `CANDIDATE`, `BLOCKED`, or `DEPRECATED` as appropriate.
+A version combination is `CERTIFIED` only after required provider, consumer, contract, integration and reference E2E tests pass. Otherwise it is `CANDIDATE`, `BLOCKED`, or `DEPRECATED` as appropriate.
