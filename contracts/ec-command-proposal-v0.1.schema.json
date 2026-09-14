@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:convergence:ec-command-proposal:0.1.0",
+  "title": "EvoCommandProposalV010",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "proposalId",
+    "enterpriseId",
+    "targetCapability",
+    "commandCode",
+    "actorIntent",
+    "idempotencyKey",
+    "correlationId",
+    "businessObjectKey",
+    "input",
+    "rationale",
+    "evidence",
+    "requiredAuthorization"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "proposalId": {
+      "type": "string"
+    },
+    "enterpriseId": {
+      "type": "string"
+    },
+    "targetCapability": {
+      "type": "string"
+    },
+    "commandCode": {
+      "type": "string"
+    },
+    "actorIntent": {
+      "const": "AI_PROPOSAL"
+    },
+    "idempotencyKey": {
+      "type": "string"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "businessObjectKey": {
+      "type": "string"
+    },
+    "expectedStateVersion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input": {
+      "type": "object"
+    },
+    "rationale": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expectedImpact": {
+      "type": "object"
+    },
+    "requiredAuthorization": {
+      "type": "string"
+    },
+    "expiresAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

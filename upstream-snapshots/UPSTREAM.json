@@ -1,0 +1,26 @@
+{
+  "captured": "2026-09-14",
+  "EVO": {
+    "version": "1.0.0-alpha.2",
+    "publicApiSha": "4ff09e2d2740ead2fa80ff997d9d8595fde3616a",
+    "buildAppSha": "bfb00b6ed3daa02a56a796443a8e831ec980d5f0",
+    "observedReferenceEndpoints": [
+      "GET /health/live",
+      "GET /health/ready",
+      "GET /api/v1/demo/dashboard",
+      "GET /api/v1/demo/ai/catalog",
+      "POST /api/v1/demo/sales-orders/approve",
+      "POST /api/v1/demo/production/complete",
+      "POST /api/v1/demo/shipments/create",
+      "POST /api/v1/demo/cost/recalculate",
+      "POST /api/v1/demo/replay"
+    ]
+  },
+  "Eidos": {
+    "version": "1.3.0-teach-and-grow.1",
+    "ecContractsSha": "a612b978392d30968c723015f04fcf1259c6ed01",
+    "experienceContractsSha": "3d4e8aa8407b8a48c88a707fd6c3fcb3f038b7d0",
+    "validatorSha": "46a34f0f78413f1aa13f0f579ce10606373edfef",
+    "contractVersion": "0.1.0"
+  }
+}

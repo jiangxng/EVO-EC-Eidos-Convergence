@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:convergence:evo-intelligence-feed:0.1.0",
+  "title": "EvoIntelligenceFeedV010",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "eventId",
+    "eventType",
+    "enterpriseId",
+    "occurredAt",
+    "businessTime",
+    "correlationId",
+    "provenance",
+    "facts"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "eventId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "eventType": {
+      "type": "string",
+      "minLength": 1
+    },
+    "enterpriseId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurredAt": {
+      "type": "string"
+    },
+    "businessTime": {
+      "type": "string"
+    },
+    "correlationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "facts": {
+      "type": "object"
+    },
+    "flowContext": {
+      "type": "object"
+    },
+    "metricContext": {
+      "type": "object"
+    },
+    "sopContext": {
+      "type": "object"
+    },
+    "stateVersion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

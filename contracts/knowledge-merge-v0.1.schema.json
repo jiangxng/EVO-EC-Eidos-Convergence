@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ec:knowledge-merge:0.1.0",
+  "title": "EcKnowledgeMergeResultV010",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "mergeId",
+    "mode",
+    "sourceA",
+    "sourceB",
+    "merged",
+    "conflicts",
+    "audit"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "mergeId": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "COPY_MERGE",
+        "NEW_BRAIN_MERGE"
+      ]
+    },
+    "sourceA": {
+      "type": "string"
+    },
+    "sourceB": {
+      "type": "string"
+    },
+    "merged": {
+      "type": "array"
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "audit": {
+      "type": "object"
+    }
+  }
+}

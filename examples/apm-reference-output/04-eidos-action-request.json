@@ -1,0 +1,17 @@
+{
+  "contractVersion": "0.1.0",
+  "actionRequestId": "AR-0b2224d7-367f-4ee0-86b9-dd87cc17c84a",
+  "proposalId": "CP-a97b3856-763d-424f-8479-4053ee5bddc8",
+  "enterpriseId": "APM-DEMO",
+  "action": "APPROVE",
+  "actor": {
+    "type": "HUMAN",
+    "id": "procurement-manager-01"
+  },
+  "authorization": {
+    "role": "ProcurementManager",
+    "scope": "supplier-change"
+  },
+  "correlationId": "APM:SO-20260918-0182:SHORTAGE",
+  "createdAt": "2026-09-14T08:56:33.595160+00:00"
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "recordId": "365d3f82-d985-4e15-bf0e-6e1a08493e50",
+    "kind": "case",
+    "status": "candidate",
+    "predicate": "situation",
+    "value": "SO-20260918-0182 material shortage"
+  },
+  {
+    "recordId": "5d4d40b9-eb54-4818-8992-a1441ba18085",
+    "kind": "decision",
+    "status": "candidate",
+    "predicate": "decision",
+    "value": "procurement.use-alternate-supplier"
+  },
+  {
+    "recordId": "cba3e250-7c6c-49fb-98b4-4e856fe7f04d",
+    "kind": "outcome",
+    "status": "candidate",
+    "predicate": "outcome",
+    "value": {
+      "text": "status=SUCCEEDED; measures={'selectedSupplier': 'SUPPLIER-B', 'promiseProtected': True, 'revenueProtectedUsd': 280000, 'incrementalCostPercent': 8.4, 'deliveryRiskDelta': -1.0}",
+      "metric_delta": -1.0
+    }
+  },
+  {
+    "recordId": "36753817-20e0-4433-8a47-634d71e3467f",
+    "kind": "lesson",
+    "status": "candidate",
+    "predicate": "candidate_lesson",
+    "value": "procurement.use-alternate-supplier -> status=SUCCEEDED; measures={'selectedSupplier': 'SUPPLIER-B', 'promiseProtected': True, 'revenueProtectedUsd': 280000, 'incrementalCostPercent': 8.4, 'deliveryRiskDelta': -1.0}"
+  }
+]

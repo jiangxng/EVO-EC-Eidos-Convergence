@@ -1,0 +1,50 @@
+{
+  "contractVersion": "0.1.0",
+  "proposalId": "CP-a97b3856-763d-424f-8479-4053ee5bddc8",
+  "enterpriseId": "APM-DEMO",
+  "targetCapability": "procurement",
+  "commandCode": "procurement.use-alternate-supplier",
+  "actorIntent": "AI_PROPOSAL",
+  "idempotencyKey": "supplier-switch:SO-20260918-0182:SUPPLIER-B",
+  "correlationId": "APM:SO-20260918-0182:SHORTAGE",
+  "businessObjectKey": "SO-20260918-0182",
+  "expectedStateVersion": "1",
+  "input": {
+    "orderNo": "SO-20260918-0182",
+    "materialId": "MAT-CRIT-SERVO",
+    "fromSupplierId": "SUPPLIER-A",
+    "toSupplierId": "SUPPLIER-B",
+    "reason": "material-shortage"
+  },
+  "rationale": [
+    "supplier A ETA exceeds customer promise",
+    "supplier B is qualified",
+    "supplier B ETA protects customer promise",
+    "margin remains acceptable after supplier B premium",
+    "USD 280000 revenue is exposed"
+  ],
+  "evidence": [
+    "947508d1-0849-42af-903f-d6170365933e",
+    "d89bc2bf-0d41-4acc-b23f-a41fe5d14850",
+    "8562006f-a697-4ad9-8736-6abc0bdeadc8",
+    "562f920d-fde4-45ab-bfd5-318893501a36",
+    "20a9a5af-574c-4bd1-a2d0-7dbef63bd8d1",
+    "061e85e1-f6c5-4a65-b295-b1d4ceaa2c7d",
+    "f774e8bc-1daa-4d1c-8ac4-f224716a4f08",
+    "0014feef-fc1c-4864-b142-06c759d3f63d",
+    "b776bbe4-1bc1-4280-915c-7f557809b221"
+  ],
+  "assumptions": [
+    "supplier qualification remains valid at execution time"
+  ],
+  "risks": [
+    "incremental material cost 8.4%"
+  ],
+  "expectedImpact": {
+    "revenueProtectedUsd": 280000,
+    "costDeltaPercent": 8.4,
+    "promiseProtected": true
+  },
+  "requiredAuthorization": "ProcurementManager",
+  "expiresAt": null
+}

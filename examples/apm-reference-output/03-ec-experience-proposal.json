@@ -1,0 +1,162 @@
+{
+  "contractVersion": "0.1.0",
+  "proposalId": "XP-ee562402-7d13-4744-a989-8060f4f85506",
+  "producedAt": "2026-09-14T08:56:33.595124+00:00",
+  "composition": {
+    "contractVersion": "0.1.0",
+    "experienceId": "manufacturing.delivery-risk.SO-20260918-0182",
+    "title": "Production Delivery Risk Decision Workspace",
+    "regions": [
+      {
+        "id": "exceptions",
+        "capability": "exception-queue",
+        "stability": "shared-stable",
+        "attention": {
+          "level": "important",
+          "reasonCode": "MATERIAL_SHORTAGE"
+        },
+        "props": {
+          "order": "SO-20260918-0182",
+          "risk": "material shortage"
+        }
+      },
+      {
+        "id": "decision",
+        "capability": "decision-panel",
+        "stability": "invariant",
+        "attention": {
+          "level": "requires-review",
+          "reasonCode": "HUMAN_AUTHORIZATION_REQUIRED",
+          "decisionCritical": true
+        },
+        "props": {
+          "recommendation": "alternate supplier",
+          "options": [
+            "wait",
+            "alternate supplier",
+            "split shipment",
+            "replan production"
+          ],
+          "commandProposalId": "CP-a97b3856-763d-424f-8479-4053ee5bddc8"
+        }
+      },
+      {
+        "id": "evidence",
+        "capability": "evidence-stack",
+        "stability": "shared-stable",
+        "attention": {
+          "level": "informative",
+          "reasonCode": "EVIDENCE"
+        },
+        "props": {
+          "contextRecordIds": [
+            "947508d1-0849-42af-903f-d6170365933e",
+            "d89bc2bf-0d41-4acc-b23f-a41fe5d14850",
+            "8562006f-a697-4ad9-8736-6abc0bdeadc8",
+            "562f920d-fde4-45ab-bfd5-318893501a36",
+            "20a9a5af-574c-4bd1-a2d0-7dbef63bd8d1",
+            "061e85e1-f6c5-4a65-b295-b1d4ceaa2c7d",
+            "f774e8bc-1daa-4d1c-8ac4-f224716a4f08",
+            "0014feef-fc1c-4864-b142-06c759d3f63d",
+            "b776bbe4-1bc1-4280-915c-7f557809b221"
+          ]
+        }
+      },
+      {
+        "id": "impact",
+        "capability": "impact-preview",
+        "stability": "adaptive",
+        "attention": {
+          "level": "important",
+          "reasonCode": "REVENUE_AT_RISK"
+        },
+        "props": {
+          "revenueAtRisk": 280000,
+          "currency": "USD",
+          "supplierBCostDeltaPercent": 8.4
+        }
+      },
+      {
+        "id": "timeline",
+        "capability": "timeline",
+        "stability": "personal-stable",
+        "attention": {
+          "level": "informative",
+          "reasonCode": "DATE_COMPARISON"
+        },
+        "props": {
+          "promiseDate": "2026-09-18",
+          "supplierAEta": "2026-09-20",
+          "supplierBEta": "2026-09-15"
+        }
+      }
+    ],
+    "metadata": {
+      "producer": "EC v1.0.1 via Convergence v0.2",
+      "standardFallbackRef": "fallback://manufacturing/delivery-risk/v1"
+    }
+  },
+  "context": {
+    "contractVersion": "0.1.0",
+    "contextId": "6cd07abd-11e9-43b1-9657-96bfa17442eb",
+    "mode": "role",
+    "role": "procurement-manager",
+    "expertise": "expert",
+    "task": "resolve material shortage",
+    "locale": "en-US",
+    "device": {
+      "terminal": "web",
+      "viewportClass": "expanded",
+      "inputModes": [
+        "pointer",
+        "keyboard"
+      ]
+    },
+    "extensions": {
+      "enterpriseId": "APM-DEMO",
+      "correlationId": "APM:SO-20260918-0182:SHORTAGE"
+    }
+  },
+  "rationale": [
+    {
+      "code": "SUPPLY_RISK",
+      "explanation": "supplier A ETA exceeds customer promise",
+      "evidence": [
+        "947508d1-0849-42af-903f-d6170365933e",
+        "d89bc2bf-0d41-4acc-b23f-a41fe5d14850"
+      ]
+    },
+    {
+      "code": "SUPPLY_RISK",
+      "explanation": "supplier B is qualified",
+      "evidence": [
+        "947508d1-0849-42af-903f-d6170365933e",
+        "d89bc2bf-0d41-4acc-b23f-a41fe5d14850"
+      ]
+    },
+    {
+      "code": "SUPPLY_RISK",
+      "explanation": "supplier B ETA protects customer promise",
+      "evidence": [
+        "947508d1-0849-42af-903f-d6170365933e",
+        "d89bc2bf-0d41-4acc-b23f-a41fe5d14850"
+      ]
+    },
+    {
+      "code": "SUPPLY_RISK",
+      "explanation": "margin remains acceptable after supplier B premium",
+      "evidence": [
+        "947508d1-0849-42af-903f-d6170365933e",
+        "d89bc2bf-0d41-4acc-b23f-a41fe5d14850"
+      ]
+    },
+    {
+      "code": "SUPPLY_RISK",
+      "explanation": "USD 280000 revenue is exposed",
+      "evidence": [
+        "947508d1-0849-42af-903f-d6170365933e",
+        "d89bc2bf-0d41-4acc-b23f-a41fe5d14850"
+      ]
+    }
+  ]
+}

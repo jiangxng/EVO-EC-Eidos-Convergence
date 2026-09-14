@@ -1,0 +1,46 @@
+{
+  "contractVersion": "0.1.0",
+  "eventId": "EV-832d37ea-f1ee-47ca-94a7-cdf25125ce22",
+  "eventType": "material.shortage.detected",
+  "enterpriseId": "APM-DEMO",
+  "occurredAt": "2026-09-14T08:56:33.594732+00:00",
+  "businessTime": "2026-09-14T08:56:33.594753+00:00",
+  "correlationId": "APM:SO-20260918-0182:SHORTAGE",
+  "provenance": {
+    "producer": "ReferenceEvoAdapter",
+    "truthClass": "reference-fact"
+  },
+  "facts": {
+    "orderNo": "SO-20260918-0182",
+    "customer": "Northstar Industrial Systems",
+    "customerPriority": "strategic",
+    "materialId": "MAT-CRIT-SERVO",
+    "promiseDate": "2026-09-18",
+    "supplierA": {
+      "id": "SUPPLIER-A",
+      "eta": "2026-09-20",
+      "qualified": true,
+      "costDeltaPercent": 0.0
+    },
+    "supplierB": {
+      "id": "SUPPLIER-B",
+      "eta": "2026-09-15",
+      "qualified": true,
+      "costDeltaPercent": 8.4
+    },
+    "revenueAtRiskUsd": 280000,
+    "marginAfterSupplierB": "acceptable"
+  },
+  "flowContext": {
+    "flow": "O2C",
+    "step": "material-availability-check"
+  },
+  "metricContext": {
+    "revenueAtRiskUsd": 280000
+  },
+  "sopContext": {
+    "sop": "material-shortage-response",
+    "version": "0.1.0"
+  },
+  "stateVersion": "1"
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ec:enterprise-function-pack:0.1.0",
+  "title": "EnterpriseFunctionPackManifestV010",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "packId",
+    "name",
+    "version",
+    "function",
+    "createdAt",
+    "sourceEcVersion",
+    "dependencies",
+    "files",
+    "compatibility"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "packId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "function": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "sourceEcVersion": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "array"
+    },
+    "files": {
+      "type": "array"
+    },
+    "compatibility": {
+      "type": "object"
+    }
+  }
+}

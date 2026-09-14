@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:convergence:eidos-action-request:0.1.0",
+  "title": "EidosActionRequestV010",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "actionRequestId",
+    "proposalId",
+    "enterpriseId",
+    "action",
+    "actor",
+    "authorization",
+    "correlationId",
+    "createdAt"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "actionRequestId": {
+      "type": "string"
+    },
+    "proposalId": {
+      "type": "string"
+    },
+    "enterpriseId": {
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "APPROVE",
+        "REJECT"
+      ]
+    },
+    "actor": {
+      "type": "object"
+    },
+    "authorization": {
+      "type": "object"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}

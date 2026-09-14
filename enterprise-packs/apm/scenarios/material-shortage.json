@@ -1,0 +1,25 @@
+{
+  "enterpriseId": "APM-DEMO",
+  "orderNo": "SO-20260918-0182",
+  "customer": "Northstar Industrial Systems",
+  "customerPriority": "strategic",
+  "product": "Precision Drive Assembly",
+  "material": "Critical Servo Module",
+  "promiseDate": "2026-09-18",
+  "supplierA": {
+    "id": "SUPPLIER-A",
+    "eta": "2026-09-20",
+    "qualified": true,
+    "costDeltaPercent": 0.0
+  },
+  "supplierB": {
+    "id": "SUPPLIER-B",
+    "eta": "2026-09-15",
+    "qualified": true,
+    "costDeltaPercent": 8.4
+  },
+  "revenueAtRiskUsd": 280000,
+  "marginAfterSupplierB": "acceptable",
+  "recommendedOption": "alternate supplier",
+  "requiresAuthorization": "ProcurementManager"
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:convergence:evo-outcome:0.1.0",
+  "title": "EvoOutcomeV010",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "outcomeId",
+    "enterpriseId",
+    "proposalId",
+    "correlationId",
+    "commandExecutionId",
+    "status",
+    "observedAt",
+    "measures",
+    "provenance"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "outcomeId": {
+      "type": "string"
+    },
+    "enterpriseId": {
+      "type": "string"
+    },
+    "proposalId": {
+      "type": "string"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "commandExecutionId": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "SUCCEEDED",
+        "FAILED",
+        "PARTIAL"
+      ]
+    },
+    "observedAt": {
+      "type": "string"
+    },
+    "measures": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    }
+  }
+}

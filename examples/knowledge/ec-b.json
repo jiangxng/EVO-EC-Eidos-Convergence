@@ -1,0 +1,33 @@
+{
+  "ecId": "EC-B",
+  "records": [
+    {
+      "recordId": "b1",
+      "kind": "claim",
+      "subject": "SUPPLIER-B",
+      "predicate": "lead_time_days",
+      "value": 9,
+      "scope": "industry:precision-components",
+      "validFrom": "2026-06-01",
+      "confidence": 0.84,
+      "provenance": {
+        "sourceEc": "EC-B",
+        "source": "industry-benchmark"
+      }
+    },
+    {
+      "recordId": "b2",
+      "kind": "claim",
+      "subject": "SUPPLIER-B",
+      "predicate": "on_time_delivery",
+      "value": 0.96,
+      "scope": "industry:precision-components",
+      "validFrom": "2026-06-01",
+      "confidence": 0.87,
+      "provenance": {
+        "sourceEc": "EC-B",
+        "source": "industry-benchmark"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "packType": "EnterpriseIntelligencePack",
+  "packId": "eip.apm",
+  "name": "Apex Precision Manufacturing",
+  "version": "0.2.0",
+  "industry": "discrete-manufacturing",
+  "archetype": "make-to-order",
+  "referenceOnly": true,
+  "publishes": {
+    "evo": "operational-pack/apm-v0.2",
+    "eidos": "experience-pack/apm-v0.2"
+  },
+  "scenario": "critical-material-shortage"
+}

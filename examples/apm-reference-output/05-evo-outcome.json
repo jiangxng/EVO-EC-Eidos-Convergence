@@ -1,0 +1,24 @@
+{
+  "contractVersion": "0.1.0",
+  "outcomeId": "OUT-d9548d8c-f0cc-4d02-9791-f0b0085ff6b1",
+  "enterpriseId": "APM-DEMO",
+  "proposalId": "CP-a97b3856-763d-424f-8479-4053ee5bddc8",
+  "correlationId": "APM:SO-20260918-0182:SHORTAGE",
+  "commandExecutionId": "CMD-bdce6f49-6e9b-4728-abb3-f6ba437e5d55",
+  "status": "SUCCEEDED",
+  "observedAt": "2026-09-14T08:56:33.595173+00:00",
+  "measures": {
+    "selectedSupplier": "SUPPLIER-B",
+    "promiseProtected": true,
+    "revenueProtectedUsd": 280000,
+    "incrementalCostPercent": 8.4,
+    "deliveryRiskDelta": -1.0
+  },
+  "provenance": {
+    "executor": "ReferenceEvoAdapter",
+    "authorization": {
+      "role": "ProcurementManager",
+      "scope": "supplier-change"
+    }
+  }
+}

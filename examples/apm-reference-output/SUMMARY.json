@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "enterprise": "Apex Precision Manufacturing",
+  "scenario": "critical-material-shortage",
+  "recommendation": "alternate supplier",
+  "approvedSupplier": "SUPPLIER-B",
+  "promiseProtected": true,
+  "revenueProtectedUsd": 280000,
+  "learnedCandidateKinds": [
+    "case",
+    "decision",
+    "outcome",
+    "lesson"
+  ],
+  "boundaries": {
+    "EC": "real bundled EC v1.0.1 reference runtime + convergence adapter",
+    "EVO": "reference adapter for candidate procurement command",
+    "Eidos": "exact 0.1.0 contract mirror/conformance; optional real repo validator"
+  }
+}

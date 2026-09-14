@@ -1,0 +1,32 @@
+[
+  {
+    "recordId": "apm-k-1",
+    "kind": "fact",
+    "subject": "SUPPLIER-B",
+    "predicate": "qualified",
+    "value": true,
+    "scope": {
+      "tenant": "APM-DEMO"
+    },
+    "confidence": 0.99,
+    "provenance": {
+      "source": "APM qualification master",
+      "sourceEc": "APM-EC"
+    }
+  },
+  {
+    "recordId": "apm-k-2",
+    "kind": "practice",
+    "subject": "strategic-customer-shortage",
+    "predicate": "preferred_option",
+    "value": "alternate supplier when qualified and margin remains acceptable",
+    "scope": {
+      "tenant": "APM-DEMO"
+    },
+    "confidence": 0.82,
+    "provenance": {
+      "source": "manufacturing reference pack",
+      "sourceEc": "APM-EC"
+    }
+  }
+]

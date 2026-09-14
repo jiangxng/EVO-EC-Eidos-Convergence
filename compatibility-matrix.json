@@ -1,0 +1,33 @@
+{
+  "convergenceVersion": "0.2.0",
+  "generatedAt": "2026-09-14",
+  "components": {
+    "EC": {
+      "version": "1.0.1",
+      "mode": "bundled-reference-runtime",
+      "python": [
+        "3.12",
+        "3.13"
+      ]
+    },
+    "EVO": {
+      "version": "1.0.0-alpha.2",
+      "mode": "public-command-boundary + optional-live-http"
+    },
+    "Eidos": {
+      "version": "1.3.0-teach-and-grow.1",
+      "mode": "contract-conformance + optional-real-repo-validator"
+    }
+  },
+  "upstreamSnapshots": {
+    "EVO_PUBLIC_API_sha": "4ff09e2d2740ead2fa80ff997d9d8595fde3616a",
+    "EVO_build_app_sha": "bfb00b6ed3daa02a56a796443a8e831ec980d5f0",
+    "Eidos_ec_contracts_sha": "a612b978392d30968c723015f04fcf1259c6ed01",
+    "Eidos_experience_contracts_sha": "3d4e8aa8407b8a48c88a707fd6c3fcb3f038b7d0",
+    "Eidos_experience_validate_sha": "46a34f0f78413f1aa13f0f579ce10606373edfef"
+  },
+  "liveGaps": [
+    "EVO upstream has no published procurement.use-alternate-supplier reference endpoint/command as of this baseline",
+    "Eidos is a library/static deterministic runtime, not an EC HTTP service"
+  ]
+}

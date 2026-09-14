@@ -1,0 +1,33 @@
+{
+  "ecId": "EC-A",
+  "records": [
+    {
+      "recordId": "a1",
+      "kind": "claim",
+      "subject": "SUPPLIER-B",
+      "predicate": "lead_time_days",
+      "value": 7,
+      "scope": "APM-DEMO",
+      "validFrom": "2026-07-01",
+      "confidence": 0.91,
+      "provenance": {
+        "sourceEc": "EC-A",
+        "source": "enterprise-history"
+      }
+    },
+    {
+      "recordId": "a2",
+      "kind": "fact",
+      "subject": "SUPPLIER-B",
+      "predicate": "qualified",
+      "value": true,
+      "scope": "APM-DEMO",
+      "validFrom": "2026-01-01",
+      "confidence": 0.99,
+      "provenance": {
+        "sourceEc": "EC-A",
+        "source": "qualification-master"
+      }
+    }
+  ]
+}
