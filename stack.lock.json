@@ -1,0 +1,37 @@
+{
+  "stackVersion": "3ec-apm-validation-0.1",
+  "status": "INTEGRATION_CANDIDATE",
+  "generatedAt": "2026-09-15",
+  "repositories": {
+    "convergence": {
+      "repository": "jiangxng/EVO-EC-Eidos-Convergence",
+      "ref": "integration/apm-stack-v0.1",
+      "baseCommit": "8c2ac2fcce3bbe87a4b34655f598f54a3c6fdec6"
+    },
+    "evo": {
+      "repository": "jiangxng/EVO",
+      "ref": "evo/enterprise-package-v0.1",
+      "commit": "ce7240191455e1691fff84d032483f28ed3df469",
+      "enterprisePackageContractCommit": "d18fac50f0fc1bb29d9728fd6c5730463f8aeb71"
+    },
+    "ec": {
+      "repository": "jiangxng/Experience-Compiler",
+      "ref": "sprint0-visible-advisory",
+      "commit": "fc2be5d6f24facbcf0e4090d7920a5eed45fd758"
+    },
+    "eidos": {
+      "repository": "jiangxng/eidos",
+      "ref": "main",
+      "commit": "52f8923ab2b4ee833ae5b05623bfd180f554570a"
+    }
+  },
+  "contracts": {
+    "enterprisePackage": "0.1",
+    "enterprisePackageOwner": "EVO"
+  },
+  "notes": [
+    "This lock describes a reproducible integration candidate, not a production-certified stack.",
+    "EVO Enterprise Package runtime integration is still in progress.",
+    "EC is optional at enterprise runtime; Eidos plus EVO must remain operable without EC."
+  ]
+}
