@@ -1,14 +1,16 @@
 {
-  "convergenceVersion": "0.2.0",
-  "generatedAt": "2026-09-14",
+  "convergenceVersion": "0.2.1-candidate",
+  "generatedAt": "2026-09-15",
+  "baseline": {
+    "frozenTag": "v0.2.0",
+    "commit": "97de9f0d01aff66d8361d3f0ebe5c04f1c0fd423",
+    "policy": "immutable"
+  },
   "components": {
     "EC": {
       "version": "1.0.1",
       "mode": "bundled-reference-runtime",
-      "python": [
-        "3.12",
-        "3.13"
-      ]
+      "python": ["3.12", "3.13"]
     },
     "EVO": {
       "version": "1.0.0-alpha.2",
@@ -19,6 +21,39 @@
       "mode": "contract-conformance + optional-real-repo-validator"
     }
   },
+  "compatibility": {
+    "schema": {
+      "status": "PASS-CANDIDATE",
+      "evidence": "contracts/v0.2.1 + fixtures/v0.2.1 + tests/test_contracts_v021.py + tests/test_fixtures_v021.py",
+      "rule": "v0.2 contracts remain immutable; v0.2.1 contracts are versioned candidates"
+    },
+    "semantic": {
+      "status": "PASS-CANDIDATE",
+      "evidence": "governance/V0.2-TO-V0.2.1-MIGRATION-MAP.md and reconciled CRCPs",
+      "rule": "preserved/transformed/defaulted/unsupported semantics must be explicit and unsupported semantics fail closed"
+    },
+    "behavior": {
+      "status": "PASS-CANDIDATE",
+      "evidence": "GitHub Actions Convergence Certification run 34918288794",
+      "python312": "PASS: 50 tests",
+      "python313": "PASS",
+      "includes": [
+        "legacy v0.2 contract regression",
+        "reference APM E2E",
+        "v0.2.1 canonical contract validation",
+        "golden and negative fixtures",
+        "APM causal-chain evidence"
+      ]
+    }
+  },
+  "securityNegativeEvidence": [
+    "fake authorization rejected",
+    "cross-tenant observation rejected",
+    "stale operational-change base rejected",
+    "tampered confirmation rejected",
+    "hypothetical simulation Actual write rejected",
+    "Shared Core personalization override rejected"
+  ],
   "upstreamSnapshots": {
     "EVO_PUBLIC_API_sha": "4ff09e2d2740ead2fa80ff997d9d8595fde3616a",
     "EVO_build_app_sha": "bfb00b6ed3daa02a56a796443a8e831ec980d5f0",
@@ -28,6 +63,7 @@
   },
   "liveGaps": [
     "EVO upstream has no published procurement.use-alternate-supplier reference endpoint/command as of this baseline",
-    "Eidos is a library/static deterministic runtime, not an EC HTTP service"
+    "Eidos is a library/static deterministic runtime, not an EC HTTP service",
+    "final upstream provider/consumer adoption certification belongs to v0.3.0 integration unless an owner reports a v0.2.1 blocker"
   ]
 }
