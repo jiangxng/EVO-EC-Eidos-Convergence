@@ -1,0 +1,100 @@
+{
+  "certificationVersion": "0.2.1-candidate",
+  "baseline": {
+    "tag": "v0.2.0",
+    "commit": "97de9f0d01aff66d8361d3f0ebe5c04f1c0fd423",
+    "immutability": "VERIFIED_BASELINE"
+  },
+  "candidateBranch": "certification/v0.2.1-proof",
+  "policy": {
+    "compatibilityDimensions": ["schema", "semantic", "behavior"],
+    "unsupportedBehavior": "FAIL_CLOSED_OR_DECLARED_DETERMINISTIC_FALLBACK",
+    "legacyTestsAloneAreSufficient": false
+  },
+  "contracts": [
+    {
+      "family": "Enterprise Observation",
+      "owner": "EVO",
+      "direction": "EVO->EC",
+      "candidate": "evo.enterprise-observation.v1",
+      "predecessors": ["EvoIntelligenceFeedV010:event/fact role", "EvoOutcomeV010:outcome role"],
+      "schemaCompatibility": "ADAPTER_REQUIRED",
+      "semanticCompatibility": "SPLIT_AND_TRANSFORM",
+      "behaviorCompatibility": "REQUIRES_PROVIDER_CONSUMER_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    },
+    {
+      "family": "Command Proposal",
+      "owner": "EC envelope + EVO command semantics",
+      "direction": "EC->EVO",
+      "candidate": "ec.command-proposal.v1",
+      "predecessors": ["EvoCommandProposalV010"],
+      "schemaCompatibility": "ADAPTER_REQUIRED",
+      "semanticCompatibility": "TRANSFORM",
+      "behaviorCompatibility": "REQUIRES_ADMISSION_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    },
+    {
+      "family": "Operational Change Proposal",
+      "owner": "EC proposal intent + EVO mutation/governance/publication",
+      "direction": "EC->EVO",
+      "candidate": "ec.operational-change-proposal.v1",
+      "predecessors": [],
+      "schemaCompatibility": "NEW_BOUNDARY",
+      "semanticCompatibility": "NEW_BOUNDARY",
+      "behaviorCompatibility": "REQUIRES_FAIL_CLOSED_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    },
+    {
+      "family": "Enterprise Simulation",
+      "owner": "EVO deterministic calculation boundary",
+      "direction": "EC<->EVO",
+      "candidate": "evo.enterprise-simulation.v0.1",
+      "predecessors": [],
+      "schemaCompatibility": "NEW_BOUNDARY",
+      "semanticCompatibility": "NEW_BOUNDARY",
+      "behaviorCompatibility": "REQUIRES_HYPOTHETICAL_ISOLATION_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    },
+    {
+      "family": "Experience Proposal",
+      "owner": "Eidos public admissibility + EC producer intent",
+      "direction": "EC->Eidos",
+      "candidate": "eidos.experience-proposal.v1",
+      "predecessors": ["EcExperienceProposalV010"],
+      "schemaCompatibility": "ADAPTER_REQUIRED",
+      "semanticCompatibility": "EXTENDED_AND_CONSTRAINED",
+      "behaviorCompatibility": "REQUIRES_EIDOS_CONSUMER_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    },
+    {
+      "family": "ActionRequest",
+      "owner": "Eidos",
+      "direction": "Eidos->Host",
+      "candidate": "eidos.action-request.v1",
+      "predecessors": ["EidosActionRequestV010"],
+      "schemaCompatibility": "ADAPTER_REQUIRED",
+      "semanticCompatibility": "GENERALIZED_TO_HOST_NEUTRAL",
+      "behaviorCompatibility": "REQUIRES_HOST_AND_EVO_PROFILE_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    },
+    {
+      "family": "Shared Envelope",
+      "owner": "Convergence cross-system profile",
+      "direction": "cross-cutting",
+      "candidate": "convergence.shared-envelope.v0.1",
+      "predecessors": [],
+      "schemaCompatibility": "NEW_PROFILE",
+      "semanticCompatibility": "NEW_PROFILE",
+      "behaviorCompatibility": "REQUIRES_IDENTITY_LINEAGE_ERROR_NEGOTIATION_EVIDENCE",
+      "status": "NOT_CERTIFIED"
+    }
+  ],
+  "releaseBlockers": [
+    "G4 executable canonical schemas/fixtures/provider-consumer evidence not yet attached to certification branch",
+    "adapter certification not yet executable",
+    "canonical APM E2E regression not yet executed",
+    "no GitHub Actions workflow run or commit status exists for certification commit"
+  ],
+  "releaseRecommendation": "DO_NOT_MERGE_OR_TAG"
+}

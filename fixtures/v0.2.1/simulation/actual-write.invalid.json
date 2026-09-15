@@ -1,0 +1,1 @@
+{"contractVersion":"0.1.0","simulationId":"sim-bad-1","scenarioId":"fifo-cost","enterpriseId":"APM","actualSnapshotRef":"snapshot-77","definitionPins":{},"rulePins":{},"valuationPins":{},"metricPins":{},"assumptions":{},"calculators":["cost"],"namespace":"ACTUAL","writeActual":true}

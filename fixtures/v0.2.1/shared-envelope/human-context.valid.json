@@ -1,0 +1,1 @@
+{"profileVersion":"0.1.0","enterpriseId":"APM","identity":{"actorType":"HUMAN","actorId":"buyer-1","delegationRef":"deleg-1"},"trace":{"correlationId":"corr-apm-shortage-001","causationId":"obs-apm-so-0182-v7"},"capability":{"contractId":"eidos.action-request","supportedVersions":["1.0.0","0.1.0"]}}

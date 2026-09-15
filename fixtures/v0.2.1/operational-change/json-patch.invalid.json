@@ -1,0 +1,1 @@
+{"contractVersion":"1.0.0","proposalId":"chg-jsonpatch","enterpriseId":"APM","targetDefinitionType":"SOP","targetDefinitionId":"procurement-shortage","baseVersion":"3","changeIntent":"must reject arbitrary JSON Patch","operations":[{"op":"replace","path":"/rules/0","value":{}}],"evidence":[],"compatibility":{"classification":"UNKNOWN"}}

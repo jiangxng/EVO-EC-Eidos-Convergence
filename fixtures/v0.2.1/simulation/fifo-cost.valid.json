@@ -1,0 +1,1 @@
+{"contractVersion":"0.1.0","simulationId":"sim-fifo-1","scenarioId":"fifo-cost","enterpriseId":"APM","actualSnapshotRef":"snapshot-77","definitionPins":{"inventory":"4"},"rulePins":{"posting":"9"},"valuationPins":{"cost":"FIFO-v2"},"metricPins":{"margin":"3"},"assumptions":{"qty":10},"calculators":["inventory","cost"],"namespace":"HYPOTHETICAL"}
