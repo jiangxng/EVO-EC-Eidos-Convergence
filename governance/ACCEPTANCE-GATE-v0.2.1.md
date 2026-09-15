@@ -1,6 +1,6 @@
 # Architecture Convergence v0.2.1 Acceptance Gate
 
-Status: OPEN
+Status: OPEN — EXECUTABLE EVIDENCE PASS; FINAL PR/RELEASE CERTIFICATION PENDING
 
 PR #1 MUST NOT merge until all blocking gates pass.
 
@@ -29,28 +29,34 @@ PR #1 MUST NOT merge until all blocking gates pass.
 - [x] Eidos first formal review received
 - [x] EVO requested semantic corrections incorporated into candidate governance docs/CRCPs
 - [x] Eidos requested semantic corrections incorporated into candidate governance docs/CRCPs
-- [ ] EVO final conformance review: READY FOR FREEZE
-- [ ] Eidos final conformance review: READY FOR FREEZE
+- [x] EVO architecture conformance review: READY FOR ARCHITECTURE FREEZE; release readiness explicitly deferred pending G4/G5 evidence
+- [x] Eidos final conformance review: READY FOR FREEZE
 
 ## G4 — Executable Contract Evidence
 
-- [ ] canonical candidate schemas/fixtures for Shared Envelope
-- [ ] golden Enterprise Observation fixture(s)
-- [ ] golden Command Proposal fixture(s)
-- [ ] golden Operational Change Proposal fixture(s)
-- [ ] golden Enterprise Simulation fixture(s)
-- [ ] golden Experience Proposal fixture(s)
-- [ ] golden Host-neutral ActionRequest + EVO mapping fixture(s)
-- [ ] invalid/security/stale fixtures
-- [ ] provider/consumer contract validation tests
+- [x] canonical candidate schemas/fixtures for Shared Envelope
+- [x] golden Enterprise Observation fixture(s)
+- [x] golden Command Proposal fixture(s)
+- [x] golden Operational Change Proposal fixture(s)
+- [x] golden Enterprise Simulation fixture(s)
+- [x] golden Experience Proposal fixture(s)
+- [x] golden Host-neutral ActionRequest + EVO mapping fixture(s)
+- [x] invalid/security/stale fixtures
+- [x] executable contract validation tests
+- [x] GitHub Actions certification on Python 3.12 and 3.13
+
+Evidence: Convergence Certification run `34918288794` completed SUCCESS. Python 3.12 executed 50 tests including legacy v0.2 regression, reference APM E2E, v0.2.1 canonical validation, golden/negative fixtures and APM causal-chain evidence. Python 3.13 job also completed SUCCESS.
 
 ## G5 — Compatibility Certification
 
-- [ ] compatibility matrix updated for v0.2.1 candidates
-- [ ] migration adapters/mappings tested where implemented
-- [ ] reference APM E2E remains passing
-- [ ] no frozen v0.2.0 artifact modified
-- [ ] PR/CI checks pass
+- [x] compatibility matrix updated for v0.2.1 candidates
+- [x] v0.2 -> v0.2.1 migration mappings documented and candidate adapters/mappings exercised where implemented
+- [x] reference APM E2E remains passing in CI
+- [x] frozen v0.2.0 tag baseline verified at `97de9f0d01aff66d8361d3f0ebe5c04f1c0fd423`; candidate work is isolated from the frozen tag
+- [ ] integrate certification evidence into `governance/v0.2.1` / PR #1
+- [ ] PR #1 CI passes on its final head
+- [ ] PR #1 mergeability re-verified after evidence integration
+- [ ] final release/full-freeze owner confirmation after G4/G5 evidence is visible on PR #1
 
 ## Freeze Questions for Final Owner Review
 
@@ -61,4 +67,8 @@ Each owner answers only:
 3. `CONTRACT SEMANTIC CONFLICT: YES / NO`
 4. `READY FOR v0.2.1 FREEZE: YES / NO`
 
-Any `YES` to the first three or `NO` to readiness keeps the gate open and must reference a concrete contract/ADR/fixture conflict.
+Any `YES` to the first three or `NO` to readiness keeps the release/full-freeze gate open and must reference a concrete contract/ADR/fixture conflict.
+
+## Current Decision
+
+Architecture / ownership / semantic freeze is complete. G4 executable evidence is green on the certification branch. G5 candidate compatibility evidence is green. Release/full freeze remains OPEN until this evidence is integrated into PR #1, PR-head CI and mergeability pass, and final owner release confirmation is recorded.
