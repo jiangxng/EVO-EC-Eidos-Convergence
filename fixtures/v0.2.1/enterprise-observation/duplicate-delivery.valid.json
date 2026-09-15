@@ -1,0 +1,1 @@
+{"semanticRule":"same observationId may be redelivered with a distinct deliveryId","first":{"observationId":"obs-apm-so-0182-v7","deliveryId":"delivery-001"},"retry":{"observationId":"obs-apm-so-0182-v7","deliveryId":"delivery-002"}}
