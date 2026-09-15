@@ -1,0 +1,29 @@
+name: Convergence Certification
+
+on:
+  push:
+    branches:
+      - governance/v0.2.1
+      - certification/v0.2.1-proof
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  contract-certification:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run legacy v0.2 regression and v0.2.1 contract evidence
+        env:
+          PYTHONPATH: src
+        run: python -m unittest discover -s tests -p 'test*.py' -v
