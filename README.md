@@ -1,3 +1,7 @@
+> **Historical convergence baseline (2026-09-24):** this repository preserves the runnable v0.2 convergence proof and compatibility evidence from the earlier architecture. It is **not** the current authority for project ownership boundaries. Current authority lives in the main EVO, Eidos, EVO App Platform and Experience-Compiler repositories.
+>
+> Current responsibility split: **Enterprise Agent advises and learns; EVO App Platform governs lifecycle/composition and authorization orchestration; Eidos realizes deterministic human interaction; EVO Ledger Runtime performs deterministic posting/ledger calculation within its owned boundary.** Humans/governed policy retain decisions and approvals.
+>
 # EVO × EC × Eidos Architecture Convergence v0.2
 
 **Status:** Runnable reference convergence + live conformance bridges  
@@ -31,7 +35,8 @@ EC outcome learning
 
 Core constitutional rule:
 
-> **EC thinks, learns and improves. EVO executes. Eidos interacts.**
+> **Historical v0.2 shorthand:** “EC thinks, learns and improves. EVO executes. Eidos interacts.”  
+> This phrase is retained as historical evidence only. In the current architecture, “EVO executes” must not be read as ownership of package lifecycle, identity/authentication, authorization policy, provider orchestration, or all enterprise effects.
 
 No component in this convergence workspace directly reads/writes another product's internal database or private implementation.
 
