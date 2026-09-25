@@ -28,3 +28,63 @@ jobs:
         env:
           PYTHONPATH: src:vendor/ec-v1.0.1/src
         run: python -m unittest discover -s tests -p 'test*.py' -v
+
+  apm-v030-live-evo:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: evo
+          POSTGRES_PASSWORD: evo
+          POSTGRES_DB: evo
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U evo -d evo" --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - name: Checkout Convergence
+        uses: actions/checkout@v4
+        with:
+          path: convergence
+      - name: Checkout EVO v0.3 runtime
+        uses: actions/checkout@v4
+        with:
+          repository: jiangxng/EVO
+          ref: v0.3.0-apm-runtime
+          path: evo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Prepare EVO runtime
+        working-directory: evo
+        env:
+          DATABASE_URL: postgres://evo:evo@localhost:5432/evo
+        run: |
+          npm install
+          npm run migrate
+          npm run seed:demo
+          npm run seed:apm:v03
+      - name: Start EVO runtime
+        working-directory: evo
+        env:
+          DATABASE_URL: postgres://evo:evo@localhost:5432/evo
+          HOST: 127.0.0.1
+          PORT: 3000
+          LOG_LEVEL: silent
+        run: |
+          npm run dev:api > /tmp/evo-v030.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/health/ready; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/evo-v030.log
+          exit 1
+      - name: Execute real cross-system APM causal chain
+        working-directory: convergence
+        env:
+          PYTHONPATH: src:vendor/ec-v1.0.1/src
+        run: python -m convergence.live_certification_v030
